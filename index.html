@@ -4,50 +4,15 @@
   <meta charset="UTF-8">
   <title>Regenerative Venture Blueprint</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f7f9;
-      margin: 0;
-    }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      background: white;
-      padding: 20px;
-    }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 8px;
-      margin: 5px 0;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-    table, th, td {
-      border: 1px solid #ccc;
-    }
-    th, td {
-      padding: 8px;
-      text-align: left;
-    }
-    button {
-      padding: 10px 15px;
-      background: #2c3e50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      margin-top: 15px;
-    }
-    .section {
-      margin-bottom: 25px;
-      padding: 15px;
-      background: #eef3f7;
-    }
+    body { font-family: Arial; background:#f4f7f9; margin:0; }
+    .container { max-width:1000px; margin:auto; background:white; padding:20px; }
+    h1,h2 { color:#2c3e50; }
+    input, textarea { width:100%; padding:8px; margin:5px 0; }
+    table { width:100%; border-collapse:collapse; }
+    th,td { border:1px solid #ccc; padding:8px; }
+    button { padding:10px; background:#2c3e50; color:white; border:none; margin-top:10px; }
+    .section { margin-bottom:25px; padding:15px; background:#eef3f7; }
+    .example { font-size:13px; color:#555; margin-bottom:10px; }
   </style>
 </head>
 
@@ -64,13 +29,21 @@
 <div class="section">
 <h2>♻️ Net-Positive Approach</h2>
 <p><b>Shift from energy drain → energy boost.</b></p>
-<p>Use what you already have (skills, content, network) to create value without burnout or waste.</p>
+<p>Use your existing skills, content, and network to create value without burnout.</p>
 
-<p><b>Example (Monika):</b> Reusing past programs, networks, and content to generate income and impact instead of starting from scratch.</p>
+<div class="example">
+<b>Example (Monika):</b> Reusing past programs, networks, and content to generate income instead of starting from scratch.
+</div>
 </div>
 
 <div class="section">
 <h2>💡 Your 10 Venture Ideas</h2>
+
+<div class="example">
+<b>Example (Monika):</b> Circular economy marketplace, Kids wellbeing program, AI-based learning platform  
+<br>
+<b>General Examples:</b> Online store, Café, Coaching business, YouTube channel, Cleaning service
+</div>
 
 <table id="ideasTable">
 <thead>
@@ -82,8 +55,7 @@
 <th>Resources Needed (1-10)</th>
 </tr>
 </thead>
-<tbody>
-</tbody>
+<tbody></tbody>
 </table>
 
 <button onclick="addRow()">➕ Add Idea</button>
@@ -94,12 +66,24 @@
 <h2>🎯 Goals</h2>
 
 <label>6-Week Goal</label>
+<div class="example">
+<b>Monika:</b> Launch 2 circular-economy pilot projects  
+<br><b>General:</b> Launch website, get first 5 customers, test idea
+</div>
 <textarea id="goal6"></textarea>
 
 <label>Ultimate Goal (BHAG)</label>
+<div class="example">
+<b>Monika:</b> Build global circular economy brand  
+<br><b>General:</b> Build $1M business, create scalable online brand
+</div>
 <textarea id="bhag"></textarea>
 
 <label>Roadblocks</label>
+<div class="example">
+<b>Monika:</b> Limited time, too many ideas  
+<br><b>General:</b> Fear, lack of money, no clarity, no support
+</div>
 <textarea id="roadblocks"></textarea>
 
 </div>
@@ -108,15 +92,31 @@
 <h2>🌟 Vision & Lifestyle</h2>
 
 <label>Vision</label>
+<div class="example">
+<b>Monika:</b> Flexible ecosystem without burnout  
+<br><b>General:</b> Be financially free, work on passion
+</div>
 <textarea id="vision"></textarea>
 
 <label>Big Why</label>
+<div class="example">
+<b>Monika:</b> Family, wellbeing, flexible life  
+<br><b>General:</b> Freedom, security, helping others
+</div>
 <textarea id="why"></textarea>
 
 <label>Lifestyle Goals</label>
+<div class="example">
+<b>Monika:</b> Create 10,000 opportunities  
+<br><b>General:</b> Travel, flexible work, more income
+</div>
 <textarea id="lifestyle"></textarea>
 
 <label>What You Love Doing</label>
+<div class="example">
+<b>Monika:</b> Connecting people, creating systems  
+<br><b>General:</b> Talking, creating, helping, selling
+</div>
 <textarea id="love"></textarea>
 
 </div>
@@ -141,8 +141,8 @@ function addRow() {
 
   row.innerHTML = `
     <td>${rowCount}</td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
+    <td><input placeholder="e.g. Online store, Coaching, App"></td>
+    <td><input placeholder="e.g. Worked in sales, ran small biz"></td>
     <td><input type="number" min="1" max="10"></td>
     <td><input type="number" min="1" max="10"></td>
   `;
@@ -150,7 +150,6 @@ function addRow() {
 
 function downloadData() {
   let ideasData = "";
-
   const table = document.getElementById("ideasTable").getElementsByTagName('tbody')[0];
 
   for (let i = 0; i < table.rows.length; i++) {
