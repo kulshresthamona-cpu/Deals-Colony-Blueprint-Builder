@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Regenerative Venture Blueprint</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+    }
+    button {
+      padding: 10px 15px;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .section {
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #eef3f7;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>🌱 Regenerative Venture Blueprint</h1>
+<p>Create your venture using what you already have — skills, experience, and resources.</p>
+
+<div class="section">
+<h2>📩 Register</h2>
+<input type="email" id="email" placeholder="Enter your email to begin">
+</div>
+
+<div class="section">
+<h2>♻️ Our Net-Positive Approach (Human-Energy Model)</h2>
+<p>
+It's not about carbon accounting. It's about shifting from <b>energy drain → energy boost</b>.
+</p>
+<p>
+Activate your existing skills, assets, and past work to create more value than you consume — without burnout, duplication, or waste.
+</p>
+
+<h3>Example (Monika)</h3>
+<p>
+Instead of starting from scratch, Monika reuses past programs, content, and networks to create new income streams and community value — reducing wasted effort and increasing impact.
+</p>
+</div>
+
+<div class="section">
+<h2>💡 Brain Dump Your Venture Ideas</h2>
+
+<label>Your 10 Ideas for Venture Building</label>
+<textarea id="ideas"></textarea>
+
+<label>Add Your Experience (projects you've worked on)</label>
+<textarea id="experience"></textarea>
+
+<label>Your Passion (1-10)</label>
+<input type="number" id="passion" min="1" max="10">
+
+<label>Resources Needed (1-10)</label>
+<input type="number" id="resources" min="1" max="10">
+
+</div>
+
+<div class="section">
+<h2>🎯 Goal Setting</h2>
+
+<label>Your 6-Week Goal (SMART)</label>
+<textarea id="goal6">
+Example: Launch at least 2 circular-economy pilot projects in 6 weeks.
+</textarea>
+
+<label>Your Ultimate Goal (BHAG)</label>
+<textarea id="bhag">
+Example: Build a global circular-economy brand with a scalable, low-risk model.
+</textarea>
+
+<label>Your Roadblocks & Frustrations</label>
+<textarea id="roadblocks"></textarea>
+
+</div>
+
+<div class="section">
+<h2>🌟 Vision & Lifestyle</h2>
+
+<label>Your Vision</label>
+<textarea id="vision">
+Example: Create a flexible ecosystem where people build ventures without burnout.
+</textarea>
+
+<label>Your Big Why</label>
+<textarea id="why">
+Example: Family, wellbeing, flexibility, and a judgment-free life.
+</textarea>
+
+<label>Your Lifestyle Goals</label>
+<textarea id="lifestyle">
+Example: Create 10,000 flexible opportunities by 2028.
+</textarea>
+
+<label>Your Passion (What you love doing)</label>
+<textarea id="love">
+Example: Connecting people, finding deals, creating simple systems.
+</textarea>
+
+</div>
+
+<button onclick="downloadData()">📥 Download My Blueprint</button>
+
+</div>
+
+<script>
+function downloadData() {
+  const data = `
+Email: ${document.getElementById('email').value}
+
+IDEAS:
+${document.getElementById('ideas').value}
+
+EXPERIENCE:
+${document.getElementById('experience').value}
+
+PASSION: ${document.getElementById('passion').value}
+RESOURCES NEEDED: ${document.getElementById('resources').value}
+
+6-WEEK GOAL:
+${document.getElementById('goal6').value}
+
+BHAG:
+${document.getElementById('bhag').value}
+
+ROADBLOCKS:
+${document.getElementById('roadblocks').value}
+
+VISION:
+${document.getElementById('vision').value}
+
+WHY:
+${document.getElementById('why').value}
+
+LIFESTYLE:
+${document.getElementById('lifestyle').value}
+
+PASSION:
+${document.getElementById('love').value}
+`;
+
+  const blob = new Blob([data], { type: "text/plain" });
+  const link = document.createElement("a");
+  link.download = "venture_blueprint.txt";
+  link.href = window.URL.createObjectURL(blob);
+  link.click();
+}
+</script>
+
+</body>
+</html>
