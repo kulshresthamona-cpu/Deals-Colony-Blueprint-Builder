@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Regenerative Venture Blueprint</title>
+  <title>Submit your braindump — co‑create your Regenerative Venture Blueprint</title>
   <style>
     body { font-family: Arial; background:#f4f7f9; margin:0; }
     .container { max-width:1000px; margin:auto; background:white; padding:20px; }
@@ -195,6 +195,17 @@ ${document.getElementById('love').value}
   link.download = "venture_blueprint.txt";
   link.href = window.URL.createObjectURL(blob);
   link.click();
+
+
+  // Open user's email client with pre-filled fields
+const email = "support@dealscolony.com.au";
+const subject = encodeURIComponent("My Venture Blueprint Submission");
+const body = encodeURIComponent(
+  "Hi Deals Colony Team,\n\nI've completed my braindump.\nPlease find my venture_blueprint.txt file attached.\n\nThanks!"
+);
+
+// Opens default email app (Gmail, Outlook, Apple Mail, etc.)
+window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
 }
 </script>
 
