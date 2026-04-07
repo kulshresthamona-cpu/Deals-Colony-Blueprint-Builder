@@ -121,7 +121,7 @@
 
 </div>
 
-<button onclick="downloadData()">📥 Download Blueprint</button>
+<button onclick="downloadData()">📥 Download Blueprint + Email</button>
 
 </div>
 
@@ -208,6 +208,7 @@ const body = encodeURIComponent(
 setTimeout(() => {
   window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
 }, 400);
+}  
 </script>
 
 </body>
